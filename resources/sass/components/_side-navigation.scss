@@ -1,0 +1,92 @@
+.side-navigation {
+  @include background-color('lightest');
+  border-radius: $border-radius-default;
+
+  &__top {
+    @include background-color('side-navigation-title');
+    padding: su(.5);
+    border-radius: $border-radius-default $border-radius-default 0 0;
+  }
+
+  &__title {
+    @include icon('menu', before);
+    color: map-get($base-colours, 'blue-lana');
+
+    &::before {
+      margin-right: su(.25);
+    }
+  }
+
+  &__body {
+    padding: su(1);
+    height: calc(100vh - 258px);
+  }
+
+  ul.menu {
+    padding: 0;
+    margin-top: 0;
+    padding-bottom: su(1);
+
+    &.border-bottom {
+      border-bottom: 1px solid map-get($border-colours, 'light');
+    }
+
+    li {
+      padding: 5px;
+    }
+
+    a {
+      @include font-color('primary');
+      @include font-size('small');
+
+      &::before {
+        margin-right: su(.75);
+      }
+
+      &:hover {
+        @include font-color('green');
+        text-decoration: none;
+      }
+    }
+
+    .create-room {
+      @include icon('plus1', before);
+
+      &::before {
+        font-size: 18px;
+        margin-right: 2px;
+      }
+    }
+
+    .share-room {
+      @include icon('share2', before);
+    }
+
+    .usernames {
+      @include icon('user', before);
+    }
+
+    .rooms {
+      @include icon('cube', before);
+    }
+
+    .administration {
+      @include icon('suitcase', before);
+    }
+
+    .moderators {
+      @include icon('group', before);
+    }
+  }
+  @include breakpoint($breakpoint-laptop) {
+    &__body {
+   //   height: calc(100vh - 290px);
+    }
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    &__body {
+     // height: calc(100vh - 270px);
+    }
+  }
+}

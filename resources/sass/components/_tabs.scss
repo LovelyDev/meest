@@ -1,0 +1,88 @@
+.tabs {
+  .tabs-component {
+    margin: 4em 0;
+    padding: 0;
+    border-radius: 0 0 $border-radius-default $border-radius-default;
+
+    &-tabs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      margin: 0;
+      border: 0;
+      padding: 0;
+    }
+
+    &-tab {
+      @include background-color('tab');
+      @include font-weight('bold');
+      @include font-style('regular', 'bold', '#999');
+      @include transition(all .3s ease-out);
+      list-style: none;
+      transform: translateY(2px);
+      flex-grow: 1;
+      padding: su(1);
+
+      &.is-active {
+        @include background-color('lightest');
+        border-bottom: none;
+      }
+
+      &:first-child {
+        border-top-left-radius: $border-radius-default;
+      }
+
+      &:last-child {
+        border-top-right-radius: $border-radius-default;
+        margin-right: 0;
+      }
+
+      a:hover {
+        @include font-size('regular');
+      }
+
+      &-a {
+        align-items: center;
+        color: inherit;
+        display: flex;
+        padding: 0;
+        text-decoration: none;
+
+        &:not(.md-button) {
+          @include font-style('h4', 'bold', 'primary');
+
+          &:hover {
+            @include font-size('h4');
+          }
+        }
+      }
+
+      .tab-icon {
+        width: 50px;
+        margin-right: su(1);
+      }
+    }
+
+    &-panels {
+      @include background-color('lightest');
+      border-radius: 0 0 $border-radius-default $border-radius-default;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    }
+
+    @include breakpoint($breakpoint-desktop) {
+      &-tab {
+        &-a {
+          padding: .5em 1em;
+
+          &:not(.md-button) {
+            @include font-style('h2', 'bold', 'primary');
+
+            &:hover {
+              @include font-size('h2');
+            }
+          }
+        }
+      }
+    }
+  }
+}

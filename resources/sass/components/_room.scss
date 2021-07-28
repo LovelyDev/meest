@@ -1,0 +1,220 @@
+.room {
+  &__title {
+    @include font-color('tertiary');
+    @include font-style('small', 'thin');
+    margin-bottom: 10px;
+  }
+
+  &__info-wrapper {
+    @include background-color('lightest');
+    padding: spacing('regular');
+  }
+
+  &__topic-label {
+    @include font-style('small', 'semi-bold');
+  }
+
+  &__topic {
+    @include font-style('small', 'thin');
+    @include font-color('blue');
+  }
+
+  &__user-info {
+    @include background-color('primary');
+    @include font-color('lightest');
+    padding: spacing('regular');
+
+    .icon {
+      @include font-style('regular', 'bold');
+      margin-right: spacing('tiny');
+    }
+  }
+
+  &__user-alias {
+    @include font-weight('semi-bold');
+  }
+
+  &__body {
+    //display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__messages-wrapper {
+    width: 100%;
+  }
+
+  &__sidebar {
+    width: 25%;
+    background: #f9f9f9;
+  }
+
+  &__footer {
+    form {
+      background: transparent;
+      //min-height: 55px;
+      margin: 0px;
+      position: relative;
+      bottom: 0;
+      display: flex;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+  }
+
+  &__smiley {
+    @include icon('smile', before);
+    cursor: pointer;
+    position: absolute;
+    font-size: 30px;
+    left: 10px;
+    bottom: -2px;
+    color: #2f75b0;
+  }
+
+  &__message {
+    margin-bottom: 5px;
+
+    &-user {
+      @include font-color('primary');
+      @include font-size('small');
+      font-weight: 400;
+      margin-right: su(1);
+
+      &.mine {
+        @include font-weight('bold');
+      }
+    }
+
+    .room_info {
+      @include font-color('tertiary');
+      @include font-style('small', 'thin');
+      margin-bottom: 10px;
+    }
+
+    .room_topic {
+      @include font-style('small', 'thin');
+      @include font-color('blue');
+    }
+
+    .rules {
+      @include font-size('small');
+      @include font-color('red');
+    }
+
+    .left,
+    .join,
+    .welcome {
+      @include font-size('small');
+      @include font-color('green');
+      font-style: italic;
+    }
+
+
+    .left {
+      @include font-color('red-light');
+    }
+
+    .welcome {
+      color: #7836f5;
+    }
+
+    &-text {
+      color: #737373;
+      @include font-size('small');
+      font-weight: 400;
+
+      &.mine {
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: su(.7);
+    }
+
+    &-item-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .avatar-thumbnail-mini {
+        margin-right: su(.5);
+      }
+    }
+  }
+
+  &__users {
+    padding: 15px;
+  }
+
+  &__user-name {
+    @include font-weight('bold');
+  }
+
+  &__input {
+    @include font-size('regular');
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    height: 45px;
+    padding: 0 su(10) 0 su(3.2);
+    width: 100%;
+    border: 1px solid white;
+    outline: none;
+    transition: all .3s ease;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+      border-color: rgba(223,225,229,0);
+    }
+  }
+
+  &__input-icon {
+    @include icon('smile', before);
+
+    &::before {
+      @include font-color('primary');
+      font-size: 30px;
+      position: absolute;
+      z-index: 1;
+      top: 8px;
+      left: 8px;
+    }
+  }
+
+  &__input-submit.el-button--primary.is-plain {
+    @include background-color('primary');
+    transition: all .3s ease;
+    right: 5px;
+    top: 4px;
+    border-radius: 50px;
+    color: white;
+    position: absolute;
+    padding: 10px 40px;
+
+    &:hover {
+      @include background-color('blue-lighter');
+    }
+  }
+
+  &__messages {
+    background-color: rgb(255, 255, 255);
+    overflow-y: auto;
+    background-size: 100%;
+    padding: 30px;
+    height: calc(100vh - 335px);
+  }
+
+  @include breakpoint($breakpoint-laptop) {
+    &__messages {
+     // height: calc(100vh - 573px);
+    }
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    &__messages {
+      //height: calc(100vh - 473px);
+    }
+  }
+}

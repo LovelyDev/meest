@@ -1,0 +1,4 @@
+name,description
+"Official Room","An official room is open at all times and is managed by chat horizon."
+"Registered Room","A registered room are open at all times even when no users are in the room."
+"Temporary Room","A temporary room is a non-registered chat room which is deleted when the last user leaves the room."

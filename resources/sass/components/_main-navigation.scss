@@ -1,0 +1,144 @@
+.main-navigation {
+  @include background-color('primary');
+  @include font-color('lightest');
+  padding: su(1) su(3);
+  position: relative;
+  overflow: hidden;
+
+  &__app-name {
+    @include font-size('h2');
+  }
+
+  &__tag-line {
+    @include font-size('small');
+  }
+
+  &__top {
+    @include display-flex;
+    @include justify-content(flex-start);
+
+    .logo {
+      width: 40px;
+    }
+
+    h1,
+    h6 {
+      margin: 0 0 su(.5) 0;
+    }
+  }
+
+  &__logo {
+    margin-right: su(1);
+  }
+
+  &__bottom {
+    @include display-flex;
+    @include justify-content(space-between);
+    align-items: center;
+  }
+
+  .menu {
+    padding: 0 ;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    li {
+      display: inline-block;
+      padding: su(1);
+      padding-bottom: 0;
+
+    }
+
+    a {
+      @include font-color('lightest');
+
+      &::before {
+        margin-right: su(.5);
+        @include font-size('h4');
+      }
+
+      &:hover {
+        color: map-get($base-colours, 'yellow-salomie');
+        text-decoration: none;
+      }
+    }
+
+    .home {
+      @include icon('home', before);
+    }
+
+    .member-lookup {
+      @include icon('group', before);
+
+      &::before {
+        font-size: 20px;
+      }
+    }
+
+    .help-center {
+      @include icon('info-circle', before);
+    }
+
+    .message-center {
+      @include icon('chat', before);
+    }
+
+    .manage-account {
+      @include icon('user-circle-o', before);
+    }
+  }
+
+  &__logout {
+    align-self: center;
+
+    a:not(.md-button) {
+      @include icon('sign-out', before);
+      @include font-color('lightest');
+
+      &::before {
+        margin-right: su(.5);
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      &:hover {
+        color: map-get($base-colours, 'yellow-salomie');
+        text-decoration: none;
+      }
+    }
+
+    .logout {
+      margin-top: 5px;
+    }
+
+    .logout,
+    .main-navigation__welcome-user {
+      float: right;
+      clear: both;
+    }
+  }
+
+  &__active-room {
+    margin-left: auto;
+    position: absolute;
+    top: 50px;
+    right: 45px;
+
+    .logo-small {
+      width: 30px;
+      margin: 0 5px 0 10px;
+    }
+
+    .title {
+      font-weight: 600;
+    }
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    //&__active-room {
+    //  right: su(4);
+    //  top: 70px;
+    //}
+  }
+}

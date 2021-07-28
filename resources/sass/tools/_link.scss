@@ -1,0 +1,6 @@
+@mixin link--rounded() {
+  background: rgba(0, 0, 0, 0.05);
+  padding: spacing() spacing();
+  border-radius: 100px;
+  white-space: nowrap;
+}

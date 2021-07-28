@@ -1,0 +1,7 @@
+/**
+ * Return a color value from a nested map.
+ */
+@function palette($palette-name, $variant: blue-viking) {
+  $palette: map-get($color-palettes, $palette-name);
+  @return map-get($palette, $variant);
+}

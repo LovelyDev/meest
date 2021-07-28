@@ -1,0 +1,224 @@
+.login {
+  @include font-color('lightest');
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+
+  &__messages {
+    margin-bottom: 15px;
+    color: #821212;
+    background: #ec8f88;
+    padding: 10px;
+    border-radius: 18px;
+    max-width: 750px;
+  }
+
+  &__inner-wrapper {
+    @include display-flex;
+    @include justify-content(space-between);
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    min-height: 500px;
+  }
+
+  &__left {
+    @include background-color('primary');
+    position: relative;
+    padding: su(2) su(2.5);
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px 0 0 25px;
+    min-width: 378px;
+    max-width: 378px;
+
+    &.not-centered {
+      align-items: normal;
+      padding-top: 100px;
+    }
+  }
+
+  &__right {
+    //background: url('/storage/login-background.png') no-repeat;
+    transition: 0.5s all ease;
+    background-size: cover;
+    position: relative;
+    padding: su(2) su(3);
+    width: 50%;
+    text-align: center;
+    display: flex;
+    border-radius: 0 25px 25px 0;
+    min-width: 372px;
+
+    &::after {
+      background-color: map-get($background-colours, 'primary');
+      background-blend-mode: hard-light;
+      display: block;
+      position:absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      @include z-index('beta');
+      opacity: .4;
+      border-radius: 0 25px 25px 0;
+    }
+  }
+
+  &__right-inner-wrapper {
+    position: relative;
+    @include z-index('gamma');
+    width: 100%;
+  }
+
+  &__buttons {
+    button {
+      width: 100%;
+      margin-bottom: su(1.5);
+    }
+  }
+
+  &__welcome {
+    text-align: center;
+  }
+
+  &__footer,
+  &__activate-wrapper {
+    position: absolute;
+    bottom: su(2);
+    margin: 0 auto;
+    width: 75%;
+
+    a:not(.md-button) {
+      @include font-size('regular');
+      color: white !important;
+    }
+  }
+
+  &__logo {
+    max-width: 90px;
+  }
+
+  &__app-name {
+    margin-bottom: su(.5);
+  }
+
+  &__language-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    label {
+      margin-bottom: su(.75);
+    }
+
+    .v-select {
+      border: 1px solid map-get($base-colours, 'white');
+      border-radius: 30px;
+      width: 100%;
+
+      input {
+        @include background-color('transparent');
+        transition: 0.3s all ease;
+        padding: su(0.333);
+      }
+
+      .vs__selected {
+        @include font-color('lightest');
+        padding-left: su(1);
+      }
+
+      svg,
+      .vs__open-indicator {
+        fill: map-get($base-colours, 'white');
+      }
+
+      .vs__actions {
+        padding-right: su(1);
+      }
+    }
+  }
+
+  &__back {
+    @include icon('arrow-left', before);
+    position: absolute;
+    left: su(2);
+    top: su(2);
+    @include font-size('h3');
+    cursor: pointer;
+  }
+
+  &__guess,
+  &__member {
+    width: 100%;
+  }
+
+  &__email,
+  &__password,
+  &__name {
+    margin-bottom: su(1);
+
+    input {
+      background: map-get($base-colours, 'blue-lana');
+      border-color: map-get($base-colours, 'blue-lana');
+
+      &::placeholder {
+        @include font-color('placeholder');
+      }
+    }
+  }
+
+  &__gender {
+    @include display-flex;
+    @include justify-content(center);
+    margin-bottom: su(1);
+
+    &-male {
+      margin-right: su(1);
+    }
+
+    &.radio--buttons li .check::before {
+      height: 13px;
+      width: 13px;
+      top: 4px;
+      left: 4px;
+    }
+
+    &.radio--buttons input[type=radio]:checked ~ .check::before {
+      @include background-color('lightest');
+    }
+  }
+
+  &__user-image {
+    text-align: center;
+    margin-bottom: su(2);
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  &__user-logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: su(1);
+  }
+
+  //&__error {
+  //  color: white !important;
+  //  background: map-get($base-colours, 'blue-dark') !important;
+  //  border-radius: 10px;
+  //  border: 2px solid white;
+  //
+  //  .md-button {
+  //    color: white !important;
+  //  }
+  //}
+}

@@ -1,0 +1,72 @@
+.ldialog-select {
+  &__header {
+    justify-content: center;
+    border-bottom: 0;
+  }
+
+  &__content {
+    @include background-color('primary');
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border: 0;
+  }
+
+  &__body {
+    border-radius: $border-radius-default;
+    padding: 0;
+  }
+
+  &__close {
+    @include icon('close', before);
+    position:absolute;
+    right: 25px;
+    top: 22px;
+
+    &::before {
+      font-size: 25px;
+      color: white;
+    }
+  }
+
+  &__title {
+    @include font-color('lightest');
+  }
+
+  &__ok {
+    max-width: 150px;
+  }
+
+  &__main-content {
+    @include display-flex;
+  }
+
+  &__left {
+    @include background-color('blue-minor');
+    width: 240px;
+    min-width: 240px;
+  }
+
+  &__right {
+    background: url(storage/interface/interface-background.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: su(2);
+    width: 100%;
+  }
+
+  @include breakpoint($breakpoint-tablet) {
+    .modal-dialog {
+      max-width: 800px;
+    }
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    .modal-dialog {
+      max-width: 1140px;
+    }
+
+    &__left {
+      width: 305px;
+      min-width: 305px;
+    }
+  }
+}

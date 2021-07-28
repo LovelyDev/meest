@@ -1,0 +1,78 @@
+.page {
+  &__main {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  &__sidebar-wrapper {
+    @include transition(all .2s ease-out);
+    width: 55px;
+    z-index: 200;
+    bottom: 0;
+    position: fixed;
+    top: 89px;
+
+    &.sidebar-open {
+      width: 300px;
+    }
+
+    &-navigation {
+      margin-top: spacing('medium');
+
+      a {
+        @include icon('podcast', before);
+        @include font-color('lightest');
+        background: transparent;
+
+        &:before {
+          @include font-size('medium');
+          margin-right: spacing('regular');
+        }
+      }
+    }
+  }
+
+  &__content {
+    &.no-sidebar {
+      margin-left: 0;
+    }
+
+    &-heading {
+      margin-bottom: spacing('medium');
+
+      .body {
+        @include font-size('small');
+        @include font-color('subtle');
+      }
+    }
+  }
+
+  //&__navigation {
+  //  @include display-flex;
+  //  position: fixed;
+  //  z-index: 101;
+  //  margin: 0;
+  //  width: 100%;
+  //  top: 0;
+  //  left: 0;
+  //  right: auto;
+  //  bottom: auto;
+  //  background: red;
+  //  height:70px;
+  //  margin-left: 250;
+  //  background: #fff;
+  //  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  //  min-height: 2.8em;
+  //}
+  //
+  //&__navigation.ui.menu.fixed {
+  //  margin-left: 250px;
+  //}
+
+  &__footer {
+    //@include background-color('primary');
+    //@include font-color('lightest');
+    //padding: su(1) su(2);
+    //text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+// Spacing Units
+$spacing-unit:                  15px;
+
+$spacing-units: (
+  'tiny':                       $spacing-unit / 3,          // 5px
+  'small':                      $spacing-unit / 1.5,        // 10px
+  'regular':                     $spacing-unit,              // 15px
+  'medium':                     $spacing-unit * 2,          // 30px
+  'large':                      $spacing-unit * 3,          // 45px
+  'xl':                         $spacing-unit * 4,          // 60px
+  'xxl':                        $spacing-unit * 5,          // 75px
+  'xxxl':                       $spacing-unit * 6,          // 90px
+);

@@ -1,0 +1,79 @@
+.chatters {
+  border-radius: 10px;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: white;
+  height: 96.5%;
+  width: 300px;
+
+  &__header {
+    @include background-color('primary');
+    @include font-color('lightest');
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .avatar-thumbnail-mini {
+      margin-right: su(.625);
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-right {
+
+    }
+  }
+
+  &__elipses {
+    @include icon('dots-three-vertical', before);
+    cursor: pointer;
+  }
+
+  &__users {
+    padding: 10px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .avatar-thumbnail-mini {
+      margin-right: 10px;
+    }
+
+    &.selected,
+    &:hover {
+      @include font-color('primary');
+      background-color: #c4e7ff;
+      cursor: pointer;
+    }
+  }
+
+  &__user-menu {
+    &.selected {
+      @include icon('dots-three-vertical', after);
+
+      &::after {
+        margin-left: 10px;
+        content: '\2713';
+      }
+    }
+  }
+
+  &__user-alais {
+    @include font-color('blue');
+  }
+
+  &__body {
+    overflow-y: auto;
+    height: calc(100vh - 290px);
+    @include background-color('lightest');
+  }
+}

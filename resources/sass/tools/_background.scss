@@ -1,0 +1,13 @@
+@mixin background-color($color) {
+  background-color: map-get($background-colours, $color);
+}
+
+@mixin background-color-alpha($color, $alpha) {
+  background-color: rgba(map-get($background-colours, $color), $alpha);
+}
+
+@mixin background-cover() {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}

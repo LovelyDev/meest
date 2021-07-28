@@ -1,0 +1,13 @@
+.el {
+  $ns : &;
+
+  &-button--primary {
+    border-radius: 0;
+  }
+
+  &-table {
+    #{$ns}-table__row td {
+      padding: spacing('tiny') 0;
+    }
+  }
+}

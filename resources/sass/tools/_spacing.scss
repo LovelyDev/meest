@@ -1,0 +1,10 @@
+@function spacing($spacing: 'regular') {
+  @return map-get($spacing-units, $spacing);
+}
+
+/*
+ * Spacing unit.
+ */
+@function su($value: 1) {
+  @return round($spacing-unit * $value);
+}

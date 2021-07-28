@@ -1,0 +1,24 @@
+.v-context {
+  border-radius: 10px;
+
+  > li.v-context__sub ul li,
+  li {
+    cursor: pointer;
+    a {
+      @include font-color('primary');
+      padding-top: 4px;
+      padding-bottom: 4px;
+      font-size: 15px;
+
+      &:hover {
+        @include font-color('primary');
+      }
+    }
+  }
+
+  .line {
+    border-bottom: 1px solid #e8e4e4;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}

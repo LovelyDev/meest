@@ -1,0 +1,41 @@
+$avatar-thumbnail-size:   40px;
+
+.avatar-thumbnail {
+  width: $avatar-thumbnail-size;
+  height: $avatar-thumbnail-size;
+  background: #b0d3e8;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+
+  &__part {
+    background-position-x: -17px;
+    background-position-y: -3px;
+    background-size: 75px;
+    background-repeat: no-repeat;
+    width: $avatar-thumbnail-size;
+    height: $avatar-thumbnail-size;
+
+    &.hair,
+    &.faces,
+    &.head_accessories,
+    &.coats,
+    &.shirts {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &.disabled::before {
+    @include background-color('grey');
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: .6;
+  }
+}

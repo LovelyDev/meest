@@ -1,0 +1,13 @@
+name,title,description,user_id,male_icon_path,female_icon_path,room_limit
+sys_admin,System Administrator,,1,roles/admin.png,roles/admin.png,0
+admin,Administrator,,1,roles/admin.png,roles/admin.png,0
+sysop,System Operator,,1,roles/sysop.png,roles/sysop.png,0
+moderator,Moderator,,1,roles/moderator.png,roles/moderator.png,0
+manager,Manager,,1,roles/manager.png,roles/manager.png,0
+host,Host,,1,roles/host.png,roles/host.png,0
+vip,VIP,,1,roles/vip.png,roles/vip.png,0
+participant,Participant,,1,roles/participant.png,roles/participant.png,0
+spectator,Spectator,,1,roles/spectator.png,roles/spectator.png,0
+premium_members,Premium Members,,1,roles/premium_male.png,roles/premium_female.png,5
+members,Members,,1,roles/member_male.png,roles/member_female.png,3
+guess,Guest,,1,roles/guest_male.png,roles/guest_female.png,2

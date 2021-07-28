@@ -1,0 +1,15 @@
+@mixin border($border: 'light') {
+  border: 1px solid map-get($border-colours, $border);
+}
+
+@mixin border-sunken() {
+  border-top: 1px solid #2d6b9f;
+
+  &::before {
+    display: block;
+    content: '';
+    background: #4388c1;
+    width: 100%;
+    height: 1px;
+  }
+}

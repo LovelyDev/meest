@@ -1,0 +1,49 @@
+/**
+ * Font color, uses $colors-font.
+ */
+@mixin font-color($color) {
+  color: map-get($text-colours, $color);
+}
+
+/**
+ * Font size mixin. See $font-sizes var.
+ */
+@mixin font-size($size: 'regular') {
+  font-size: map-get($font-sizes, $size);
+}
+
+/**
+ * Font weight, uses $font-weights.
+ */
+@mixin font-weight($weight: 'regular') {
+  font-weight: map-get($font-weights, $weight);
+}
+
+/**
+ * Font weight, uses $font-weights.
+ */
+@mixin font-style($size: 'regular', $weight: null, $color: null) {
+  @include font-size($size);
+
+  @if ($weight) {
+    @include font-weight($weight);
+  }
+
+  @if ($color) {
+    @include font-color($color);
+  }
+}
+
+/**
+ * Font weight, uses $font-weights.
+ */
+@mixin line-height($line-height: 'regular') {
+  line-height: map-get($line-heights, $line-height);
+}
+
+/*
+ * Font size function.
+ */
+@function fs($value: 1) {
+  @return round($font-size * $value);
+}

@@ -1,0 +1,188 @@
+.alias-form {
+  &__footer {
+    position: absolute;
+    bottom: su(1);
+    right: su(1);
+    display: flex;
+    width: 50%;
+
+    button:last-child {
+      margin-left: su(1);
+    }
+  }
+
+  &__avatar-head {
+    width: 40px;
+    display: block;
+  }
+
+  &__avatar-preview-wrapper {
+    text-align: center;
+    margin: 100px;
+  }
+
+  &__avatar-preview {
+    @include transition(all .5s ease-out);
+    width: 50%;
+  }
+
+  &__name-plate {
+    @include transition(all .5s ease-out);
+    @include font-color('darkest');
+    @include font-weight('semi-bold');
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 33px;
+    background: white;
+    padding: 5px 30px;
+    line-height: 1;
+    border: 3px solid black;
+    display: table;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include background-color('blue-dark');
+    @include font-color('lightest');
+    @include font-weight('semi-bold');
+    @include font-size('h5');
+    padding: su(1);
+    text-align: center;
+  }
+
+  &__disabled-account-title {
+    @include background-color('blue-dark');
+    @include font-color('lightest');
+    @include font-weight('semi-bold');
+    @include font-size('small');
+    text-align: center;
+    padding: su(.5);
+    margin: su(.8) 0;
+  }
+
+  &__alias-items-wrapper {
+    padding: su(1) 0;
+    height: 410px;
+  }
+
+  &__alias-items {
+    padding: 0 su(.5);
+    display: block;
+    max-height: 233px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    &.full-height {
+      max-height: 380px;
+    }
+
+    li {
+      height: 40px;
+      cursor: pointer;
+      margin-bottom: su(.5);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        @include transition(all .5s ease-out);
+        content: '';
+        display: block;
+        position: absolute;
+        border: 10px solid #afcfea;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        margin-top: 12px;
+        width: 0;
+        height: 0;
+      }
+
+      &.active {
+        &::before {
+          border-left-color: #afcfea;
+        }
+      }
+
+      label {
+        padding: 0;
+        display: flex;
+        height: 40px;
+
+        img {
+          margin-left: su(1);
+        }
+
+        span {
+          @include font-color('lightest');
+          margin-left: su(.5);
+          padding-top: 12px;
+        }
+      }
+
+      .avatar-thumbnail {
+        margin-left: su(1);
+      }
+    }
+
+    // Disabled usernames
+    &.disabled {
+      max-height: 90px;
+
+      li {
+        cursor: default;
+        position: relative;
+
+        label {
+          cursor: default;
+
+          span {
+            @include font-color('grey-lighter');
+          }
+        }
+      }
+    }
+  }
+
+   &__submit {
+    float: right;
+    width: 150px;
+    margin-top: su(1);
+  }
+
+  &__create-wrapper {
+    @include border-sunken;
+    @include font-size('small');
+    @include font-color('lightest');
+    text-align: center;
+  }
+
+  &__btn-create {
+    margin: su(.5);
+    max-width: 180px;
+  }
+
+  &__chat-hours {
+    @include font-color('lightest');
+    @include font-size('small');
+    position: absolute;
+    right: su(1);
+    top: su(.5);
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    &__avatar-preview {
+      width: initial;
+    }
+
+    &__footer {
+      justify-content: flex-end;
+
+      button {
+        max-width: 160px;
+      }
+    }
+  }
+}

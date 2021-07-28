@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/fonts/icomoon/icomoon.eot?f88owm');
+  src:  url('/fonts/icomoon/icomoon.eot?f88owm#iefix') format('embedded-opentype'),
+  url('/fonts/icomoon/icomoon.ttf?f88owm') format('truetype'),
+  url('/fonts/icomoon/icomoon.woff?f88owm') format('woff'),
+  url('/fonts/icomoon/icomoon.svg?f88owm#icomoon') format('svg');
+  @include font-weight('normal');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oxygen';
+  src: font-url('/fonts/oxygen/oxygen-light-webfont.eot');
+  src: font-url('/fonts/oxygen/oxygen-light-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/oxygen/oxygen-light-webfont.woff2') format('woff2'),
+      url('/fonts/oxygen/oxygen-light-webfont.woff') format('woff'),
+      url('/fonts/oxygen/oxygen-light-webfont.ttf') format('truetype'),
+      url('/fonts/oxygen/oxygen-light-webfont.svg#omneslight_italic') format('svg');
+  @include font-weight('thin');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oxygen';
+  src: font-url('/fonts/oxygen/oxygen-regular-webfont.eot');
+  src: font-url('/fonts/oxygen/oxygen-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/oxygen/oxygen-regular-webfont.woff2') format('woff2'),
+       url('/fonts/oxygen/oxygen-regular-webfont.woff') format('woff'),
+       url('/fonts/oxygen/oxygen-regular-webfont.ttf') format('truetype'),
+        url('/fonts/oxygen/oxygen-regular-webfont.svg#omneslight_italic') format('svg');
+  @include font-weight('regular');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oxygen';
+  src: font-url('/fonts/oxygen/oxygen-bold-webfont.eot');
+  src: font-url('/fonts/oxygen/oxygen-bold-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/oxygen/oxygen-bold-webfont.woff2') format('woff2'),
+      url('/fonts/oxygen/oxygen-bold-webfont.woff') format('woff'),
+      url('/fonts/oxygen/oxygen-bold-webfont.ttf') format('truetype'),
+      url('/fonts/oxygen/oxygen-bold-webfont.svg#omneslight_italic') format('svg');
+  @include font-weight('bold');
+  font-style: normal;
+}
+html {
+  overflow-y: hidden;
+}
+
+.md-body-1,
+.md-body-2,
+body {
+  @include background-color('primary');
+  @include font-size('regular');
+  font-family: $font-family-oxygen;
+
+  &.with-background {
+    background-size: cover;
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    overflow: hidden;
+  }
+}
+
+// Headings
+$headings: h1, h2, h3, h4, h5, h6;
+
+@each $heading in $headings {
+  #{$heading} {
+    @include font-size($heading);
+    @include line-height($heading);
+    @include font-weight('regular');
+  }
+}
+
+p {
+  @include font-size('regular');
+  @include font-weight('regular');
+  color: map-get($text-colours, 'darkest');
+  margin: 0 0 spacing('regular') 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a,
+a.link {
+  text-decoration: none;
+  @include font-color('secondary');
+}
+
+a:hover,
+a:active,
+a:focus,
+.link:hover,
+.link:active,
+.link:focus {
+  @include font-size('regular');
+  @include font-color('secondary');
+  outline: none;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+a.animate {
+  @include z-index('alpha');
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 spacing('small');
+  border-radius: spacing('regular');
+
+
+  &::before {
+    @include background-color('primary');
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    transform: scaleX(0);
+    animation: 1.4s forwards no-hover-v linear;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      animation: .5s forwards hover-v linear;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+
+  li {
+    list-style: none;
+  }
+}

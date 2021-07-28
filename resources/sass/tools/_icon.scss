@@ -1,0 +1,46 @@
+@mixin icon($name, $pseudo: 'before') {
+  &:#{$pseudo} {
+    @include font-weight('regular');
+    content: map-get($icons, $name);
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@mixin background-icon($image_url, $pseudo: 'before', $date-icon-size: 30px) {
+  &:#{$pseudo} {
+    content: '';
+    width: $date-icon-size;
+    height: $date-icon-size;
+    display: inline-block;
+    @include background(image-url($image_url) no-repeat);
+    margin-right: spacing;
+  }
+}
+
+@mixin icon-with-label($icon-path: 'icons/ic_calendar.png',  $pseudo: before, $label-color: map-get($text-colours, 'tertiary')) {
+  @include background-icon($icon-path, $pseudo);
+  @include ci-display-flex;
+  @include font-weight('semi-bold');
+  color: $label-color;
+  margin-bottom: spacing();
+}
+
+@mixin button-icon($offset-right) {
+  position: relative;
+
+  &:after {
+    @include transform(translate(-50%, -50%));
+    position: absolute;
+    right: $offset-right;
+    top: 50%;
+  }
+}

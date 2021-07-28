@@ -1,0 +1,18 @@
+@import '~breakpoint-sass';
+@import "~compass-mixins";
+
+// Import boostrap vue styles.
+@import "overrides/**/*";
+
+$animationDuration: 0.5s;
+@import "../../node_modules/vue2-animate/src/sass/vue2-animate.scss";
+@import '~vue-context/src/sass/vue-context';
+
+// Import custom styles.
+@import "settings/**/*";
+@import "tools/**/*";
+@import "objects/**/*";
+@import "base/**/*";
+@import "elements/**/*";
+@import "components/**/*";
+//@import "trumps/**/*";

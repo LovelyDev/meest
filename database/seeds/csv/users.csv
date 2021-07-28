@@ -1,0 +1,7 @@
+name,email,gender,role
+Lemuel_Perlas,lemuel@example.com,m,1
+Mike_Markwood,mike@example.com,m,1
+Admin,admin@example.com,m,2
+Sysops,sysops@example.com,m,3
+Moderator,moderator@example.com,m,4
+Member,member@example.com,m,11

@@ -1,0 +1,89 @@
+.ldialog {
+  &__content {
+    @include font-color('lightest');
+    @include background-color('primary');
+    border-radius: $border-radius-default;
+    border: 3px solid white;
+  }
+
+  &__header {
+    &.type-message {
+      border: none;
+      justify-content: center;
+      padding-bottom: 0;
+    }
+
+    &.type-confirm,
+    &.type-extra {
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid #2d6b9f;
+
+      .ldialog__icon::before {
+        font-size: 25px;
+        margin-right: 10px;
+      }
+
+      .ldialog__title {
+        @include font-size('h5');
+      }
+    }
+  }
+
+  &__body {
+    border-top: 1px solid #4388c1;
+    border-bottom: 1px solid #2d6b9f;
+
+    &.type-message {
+      text-align: center;
+      border-top: none;
+    }
+
+    &.type-extra {
+      text-align: center;
+    }
+  }
+
+  &__footer.modal-footer {
+    border-top: 1px solid #4388c1;
+    justify-content: center;
+
+    &.type-confirm {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__icon {
+    &.info {
+      @include icon('info-circle', before);
+    }
+
+    &.user-times {
+      @include icon('user-times', before);
+    }
+
+    &.user-plus {
+      @include icon('user-plus', before);
+    }
+
+    &.user-circle-o {
+      @include icon('user-circle-o', before);
+    }
+
+    &::before {
+      font-size: 60px;
+      color: white;
+    }
+  }
+
+  &__message {
+    @include font-color('lightest');
+  }
+
+  &__no,
+  &__yes,
+  &__ok {
+    max-width: 150px;
+  }
+}

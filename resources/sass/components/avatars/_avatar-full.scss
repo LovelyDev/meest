@@ -1,0 +1,43 @@
+$avatar-full-size:    150px;
+
+.avatar-full {
+  $parent: &;
+
+  width: 235px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &__part {
+    background-size: 118%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+
+    &.shoes,
+    &.pants,
+    &.coats,
+    &.accessories,
+    &.head_accessories,
+    &.hair,
+    &.faces,
+    &.shirts {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &.original-size {
+    width: $avatar-full-size;
+    height: $avatar-full-size;
+    margin-top: 10px;
+
+    #{$parent}__part {
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: $avatar-full-size;
+      height: $avatar-full-size;
+    }
+  }
+}

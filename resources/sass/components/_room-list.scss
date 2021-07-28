@@ -1,0 +1,77 @@
+.room-list {
+  padding: 0 su(2) su(1) su(2);
+
+  &__copy {
+    @include font-style('small', 'regular', 'primary');
+    padding: su(.75);
+  }
+
+  &__items {
+    overflow: hidden;
+    position: relative;
+    overflow-y: auto;
+    height: calc(100vh - 356px);
+  }
+
+  &__item {
+    @include display-flex;
+    @include justify-content(flex-start);
+    @include background-color('primary');
+    @include font-color('lightest');
+    transition: all .3s ease;
+    margin-bottom: su(1);
+    text-align: left;
+    padding: 8px su(1.5);
+    border-radius: 40px;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      @include background-color('blue-lighter');
+    }
+
+    &-logo-wrapper {
+      width: 40px;
+    }
+
+    &-logo {
+      width: 30px;
+    }
+
+    &-title {
+      @include font-weight('bold');
+    }
+
+    &-description {
+      @include font-size('small');
+    }
+
+    &-stats {
+      @include background-color('lightest');
+      @include font-color('primary');
+      @include font-size('small');
+      margin-left: auto;
+      margin-right: 150px;
+      padding: 5px;
+      min-width: 150px;
+      text-align: center;
+      border-radius: 30px;
+
+      &-users {
+        @include icon('group', before);
+        margin-right: 10px;
+      }
+    }
+
+    &-language {
+      margin-right: su(1);
+    }
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    &__items {
+      height: calc(100vh - 388px);
+    }
+  }
+}
+

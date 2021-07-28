@@ -1,0 +1,67 @@
+.popup {
+  @include background-color('blue-minor');
+
+  &__header {
+    @include background-color('blue-minor');
+    @include font-color('lightest');
+    @include font-weight('bold');
+    @include font-size('h4');
+    border-bottom: 1px solid #2d6b9f;
+    text-align: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #428cca;
+    }
+
+    &-inner-wrapper {
+      padding: su(1.5);
+    }
+  }
+
+  &__close-link {
+    transition: 0.5s all ease;
+    position: absolute;
+    right: 20px;
+
+    &:hover {
+      //color: map-get($text-colours, 'red-light') !important;
+      @include font-size('h4');
+    }
+  }
+
+  &__close-icon {
+    float: right;
+    margin-left: 15px;
+    @include icon('close', before);
+
+    &::before {
+      color: white;
+    }
+  }
+
+  &__body {
+    @include background-color('blue-minor');
+    padding: su(2);
+  }
+
+  &__footer {
+    clear: both;
+    border-top: 1px solid #2d6b9f;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #428cca;
+    }
+
+    &-inner-wrapper {
+      margin: su(1.5);
+    }
+  }
+}

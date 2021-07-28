@@ -1,0 +1,37 @@
+.ldialog-form {
+  &__content {
+    @include font-color('lightest');
+    @include background-color('primary');
+    border-radius: $border-radius-default;
+    border: 3px solid white;
+  }
+
+  &__header {
+    border-bottom: 1px solid #4388c1;
+    text-align: center;
+    display: block;
+  }
+
+  &__body {
+    border-bottom: 1px solid #2d6b9f;
+    border-top: 1px solid #2d6b9f;
+  }
+
+  &__footer.modal-footer {
+    border-top: 1px solid #4388c1;
+    justify-content: center;
+  }
+
+  .input--text {
+    background: #528dbe;
+
+    &::placeholder {
+      @include font-color('grey-lighter');
+    }
+  }
+
+  &__cancel,
+  &__create {
+    max-width: 150px;
+  }
+}

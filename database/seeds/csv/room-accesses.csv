@@ -1,0 +1,6 @@
+name,description
+"Invite Only","Only users can join the chat room if they are invited to the room or are a room host or higher."
+"All Users","Any user can access this type of chat room."
+"Members Only","Guests are restricted from accessing a member only chat room."
+"Premium Only","Only user accounts who are premium or are a room host or higher may enter this room."
+"Moderators Only","Only user accounts who are a moderator or higher may enter this room."

@@ -1,0 +1,128 @@
+.interface {
+  &__body {
+    @include display-flex;
+  }
+
+  &__type-logo {
+    width: 100%;
+    display: block;
+  }
+
+  &__type-logo-big {
+    width: 100%;
+    transition: 0.5s all ease;
+  }
+
+  &__type-logo-wrapper {
+    @include background-color('lightest');
+    box-shadow: 0px 2px 5px -1px #272626;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: su(1);
+  }
+
+  &__type {
+    padding: su(1) 8px 8px;
+  }
+
+  &__type-text {
+    @include font-color('primary');
+    @include font-weight('thin');
+    margin-top: su(.5);
+    text-align: center;
+  }
+
+  &__title {
+    @include background-color('blue-dark');
+    @include font-color('lightest');
+    @include font-weight('semi-bold');
+    @include font-size('h5');
+    padding: su(1);
+    text-align: center;
+  }
+
+  &__type-ul {
+    padding: 0;
+    display: block;
+
+    li {
+      background: #2d6da2;
+      @include background-color('blue-dark');
+      padding: 10px;
+      border-radius: 10px;
+      height: 155px;
+      margin-bottom: su(1);
+
+      &:hover {
+        box-shadow: 0px 2px 5px -1px #272626;
+      }
+
+      label {
+        padding: 0;
+      }
+
+      .check {
+        z-index: 10;
+        bottom: 5px;
+        top: unset;
+        height: 20px;
+        width: 20px;
+        border-width: 1px;
+
+        .inside {
+          display: inline-block;
+          width: 200px;
+          margin-left: 25px;
+          @include font-color('lightest');
+          position: absolute;
+          top: -3px;
+        }
+      }
+
+      &.active {
+        @include background-color('lightest');
+        box-shadow: 0px 2px 5px -1px #272626;
+
+        .check {
+          @include background-color('lightest');
+          border: 1px solid map-get($base-colours, 'blue-dark');
+
+          .inside {
+            @include font-color('blue-light');
+          }
+        }
+      }
+    }
+  }
+
+  &__submit {
+    float: right;
+    width: 150px;
+    margin-top: su(1);
+  }
+
+  &__remember {
+    @include border-sunken;
+    @include font-size('small');
+    @include font-color('lightest');
+    text-align: left;
+  }
+
+  @include breakpoint($breakpoint-desktop) {
+    &__type-logo-wrapper {
+      margin: 15px 30px;
+    }
+
+    &__type-ul li {
+      height: 205px;
+
+      .check {
+        top: 176px;
+      }
+    }
+
+    &__remember .lcheckbox {
+      margin-top: 5px;
+    }
+  }
+}

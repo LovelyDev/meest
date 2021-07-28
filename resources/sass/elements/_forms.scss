@@ -1,0 +1,93 @@
+button {
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+}
+
+label {
+  width: 100%;
+  display: block;
+}
+
+input[type='date'],
+input[type='tel'],
+input[type='email'],
+input[type='text'],
+input[type='search'],
+input[type='password'],
+input[type='date'] {
+
+  &:focus {
+    //box-shadow: inset 5px 0 0 -1px map-get($brand-crs, 'secondary');
+  }
+}
+
+.form {
+  &-elements {
+   // overflow: auto;
+  }
+
+  &-element__wrapper {
+    width: 100%;
+    margin-bottom: su(.5);
+
+    label {
+      @include font-color('lightest');
+      margin-bottom: su(.75);
+    }
+
+    .input--text {
+      @include font-color('darkest');
+    }
+
+    textarea {
+      @include font-size('regular');
+      width: 100%;
+      min-width: 100%;
+      padding: su(.5);
+    }
+
+    .vs__dropdown-toggle {
+      border: none;
+    }
+
+    .v-select {
+      @include background-color('lightest');
+      border: 1px solid map-get($base-colours, 'white');
+      border-radius: 30px;
+      width: 100%;
+
+
+      input {
+        @include background-color('transparent');
+        transition: 0.3s all ease;
+        padding: su(0.333);
+      }
+
+      .vs__selected {
+        //@include font-color('lightest');
+        padding-left: su(1);
+      }
+
+      svg,
+      .vs__open-indicator {
+        //fill: map-get($base-colours, 'white');
+      }
+
+      .vs__actions {
+        padding-right: su(1);
+      }
+    }
+
+    &.left {
+      float: left;
+      width: 49%;
+    }
+
+    &.right {
+      float: right;
+      width: 49%;
+    }
+  }
+}
